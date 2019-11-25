@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0b42742-e178-451d-9ac9-402786c83205" name="Default Changelist" comment="Servidor e cliente funcionando com o RMI">
+    <list default="true" id="f0b42742-e178-451d-9ac9-402786c83205" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servidor/BancoImplementacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor/BancoImplementacao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servidor/BancoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor/BancoInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servidor/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor/Conta.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servidor/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor/Servidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Cliente/ClienteImplementacao.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,8 +152,19 @@
       <workItem from="1574247482323" duration="7706000" />
       <workItem from="1574375312945" duration="3039000" />
       <workItem from="1574638569942" duration="1041000" />
-      <workItem from="1574640494045" duration="4575000" />
+      <workItem from="1574640494045" duration="5296000" />
+      <workItem from="1574678952854" duration="3267000" />
+      <workItem from="1574687721602" duration="3202000" />
+      <workItem from="1574702527622" duration="7982000" />
     </task>
+    <task id="LOCAL-00001" summary="Servidor e cliente funcionando com o RMI">
+      <created>1574645104140</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574645104140</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +175,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -2,6 +2,7 @@ package Servidor;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.sql.SQLException;
 
 public interface BancoInterface extends Remote {
 /*
@@ -13,5 +14,5 @@ public interface BancoInterface extends Remote {
         etc.
 */
 
-    Conta login(Conta loginConta) throws RemoteException;
+    Conta login(Conta dadosLogin) throws RemoteException;
 }

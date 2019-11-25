@@ -7,24 +7,26 @@ import Servidor.Conta;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Cliente {
     private Conta conta;
-    private BancoImplementacao banco;
+    private BancoInterface banco;
 
-
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args){
 
         int flagFim = 1;
-        int operador = -1;
         Scanner sc = new Scanner(System.in);
         Cliente cliente = new Cliente();
 
+        cliente.setBanco(null);
+
         try{
 
-            Registry registry = LocateRegistry.getRegistry("localhost", 8080);
-            BancoInterface banco = (BancoInterface) registry.lookup("bi");
+            Registry registry = LocateRegistry.getRegistry("localhost", 27017);
+            cliente.setBanco((BancoInterface) registry.lookup("banco"));
+            //BancoInterface banco = (BancoInterface) registry.lookup("banco");
 
             while(flagFim != 0){
                 System.out.println("======= SISTEMA BANCARIO =======");
@@ -35,26 +37,53 @@ public class Cliente {
                 switch(flagFim){
                     case 1:
                         if(cliente.login()){
-
+                            System.out.println("\n========= BEM VINDO AO =========");
+                            cliente.menu(cliente);
                         }else {
-
+                            System.out.println("\nO usuário ou a senha não correspondem a um cliente cadastrado. Tente novamente!\n");
                         }
-
                         break;
                     case 0:
                         System.out.println("Saindo...");
                         break;
-
                     default:
                 }
-
-
-
             }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
+    private boolean login(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("======= SISTEMA BANCARIO =======");
+        System.out.println("\nDigite o numero da sua Agencia:\n");
+
+        Integer agencia = 1;//sc.nextInt();
+
+        System.out.println("\nDigite o numero da sua conta:\n");
+
+        Integer numeroConta = 1;//sc.nextInt();
+
+        System.out.println("\nDigite sua senha:\n");
+
+        String senha = "123";//sc.next();
+
+        this.conta = new Conta(agencia, numeroConta, senha);
+
+        try{
+
+            this.conta = this.banco.login(this.conta);
+
+            if(this.conta != null) {
+                return true;
+            }else{
+                return false;
+            }
 
         }catch (Exception e){
             e.printStackTrace();
+            return false;
         }
     }
 
@@ -79,7 +108,7 @@ public class Cliente {
             switch(operador) {
                 case 0:
                     flagFim = 0;
-                    System.out.println("============= OPERAÇÃO FINALIZADA ===============");
+                    System.out.println("======= OPERAÇÃO FINALIZADA =======");
                     break;
                 case 1:
 
@@ -94,33 +123,12 @@ public class Cliente {
         }
     }
 
-    private boolean login(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("======= SISTEMA BANCARIO =======");
-        System.out.println("\nDigite o numero da sua Agencia:\n");
 
-        Integer agencia = sc.nextInt();
+    public BancoInterface getBanco() {
+        return banco;
+    }
 
-        System.out.println("\nDigite o numero da sua conta:\n");
-
-        Integer numeroConta = sc.nextInt();
-
-        System.out.println("\nDigite sua senha:\n");
-
-        String senha = sc.next();
-
-        this.conta = new Conta(agencia, numeroConta, senha);
-
-        try{
-            this.conta = this.banco.login(this.conta);
-
-            if(this.conta != null){
-                return true;
-            }
-            return false;
-        }catch(RemoteException e){
-            return false;
-        }
-
+    public void setBanco(BancoInterface banco) {
+        this.banco = banco;
     }
 }

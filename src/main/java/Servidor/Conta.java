@@ -8,7 +8,7 @@ public class Conta implements Serializable {
     private Integer numeroConta;
     private Integer agencia;
     private String senha;
-    private BigDecimal saldo;
+    private double saldo;
 
     public Conta(Integer agencia, Integer numeroConta, String senha) {
         this.agencia = agencia;
@@ -48,11 +48,11 @@ public class Conta implements Serializable {
         this.senha = senha;
     }
 
-    public BigDecimal getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(BigDecimal saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
 }
