@@ -1,6 +1,7 @@
 package Cliente;
 
 import Servidor.BancoImplementacao;
+import Servidor.BancoInterface;
 import Servidor.Conta;
 
 import java.rmi.RemoteException;
@@ -12,25 +13,41 @@ public class Cliente {
     private Conta conta;
     private BancoImplementacao banco;
 
+
     public static void main(String[] args) throws Exception{
 
         int flagFim = 1;
+        int operador = -1;
+        Scanner sc = new Scanner(System.in);
         Cliente cliente = new Cliente();
 
         try{
+
             Registry registry = LocateRegistry.getRegistry("localhost", 8080);
-            BancoImplementacao Banco = (BancoImplementacao) registry.lookup("BI");
+            BancoInterface banco = (BancoInterface) registry.lookup("bi");
 
             while(flagFim != 0){
                 System.out.println("======= SISTEMA BANCARIO =======");
                 System.out.println("1 - Logar");
                 System.out.println("0 - Sair");
+                flagFim = sc.nextInt();
 
-                if(cliente.login()){
-                    cliente.menu();
-                }else{
+                switch(flagFim){
+                    case 1:
+                        if(cliente.login()){
 
+                        }else {
+
+                        }
+
+                        break;
+                    case 0:
+                        System.out.println("Saindo...");
+                        break;
+
+                    default:
                 }
+
 
 
             }
@@ -43,10 +60,9 @@ public class Cliente {
 
     private static void menu(Cliente clente) throws RemoteException{
 
-        Scanner sc = new Scanner(System.in);
-
         int flagFim = 1;
         int operador;
+        Scanner sc = new Scanner(System.in);
 
         while(flagFim != 0 ) {
             System.out.println("======= SISTEMA BANCARIO =======");
@@ -78,25 +94,33 @@ public class Cliente {
         }
     }
 
-    private boolean login throws RemoteException(){
+    private boolean login(){
+        Scanner sc = new Scanner(System.in);
         System.out.println("======= SISTEMA BANCARIO =======");
+        System.out.println("\nDigite o numero da sua Agencia:\n");
+
+        Integer agencia = sc.nextInt();
+
         System.out.println("\nDigite o numero da sua conta:\n");
 
-        Scanner sc = new Scanner(System.in);
-
-        Integer conta = sc.nextInt();
+        Integer numeroConta = sc.nextInt();
 
         System.out.println("\nDigite sua senha:\n");
 
-        Integer senha = sc.nextInt();
+        String senha = sc.next();
+
+        this.conta = new Conta(agencia, numeroConta, senha);
 
         try{
-            return true;
+            this.conta = this.banco.login(this.conta);
+
+            if(this.conta != null){
+                return true;
+            }
+            return false;
         }catch(RemoteException e){
             return false;
         }
-
-        return false;
 
     }
 }

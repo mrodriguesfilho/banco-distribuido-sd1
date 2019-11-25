@@ -1,15 +1,17 @@
 package Servidor;
 
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 
 public interface BancoInterface extends Remote {
 /*
     -Determinar os métodos que o banco faz
+        - Login
         - Saque, Deposito, Transferencia
         - Criar conta
         - Exibir extrato
         etc.
 */
 
-    void criarConta(String nomeCliente, String senhaCliente) throws Exception;
+    Conta login(Conta loginConta) throws RemoteException;
 }

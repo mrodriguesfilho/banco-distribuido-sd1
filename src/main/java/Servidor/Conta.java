@@ -10,6 +10,12 @@ public class Conta implements Serializable {
     private String senha;
     private BigDecimal saldo;
 
+    public Conta(Integer agencia, Integer numeroConta, String senha) {
+        this.agencia = agencia;
+        this.numeroConta = numeroConta;
+        this.senha = senha;
+    }
+
     public String getNomeCliente() {
         return nomeCliente;
     }

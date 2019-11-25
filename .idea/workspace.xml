@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0b42742-e178-451d-9ac9-402786c83205" name="Default Changelist" comment="" />
+    <list default="true" id="f0b42742-e178-451d-9ac9-402786c83205" name="Default Changelist" comment="Servidor e cliente funcionando com o RMI">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servidor/BancoImplementacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor/BancoImplementacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servidor/BancoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor/BancoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servidor/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor/Conta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servidor/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Cliente/ClienteImplementacao.class" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +38,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -38,6 +49,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1TqFVi1awqu37vgnX9Pm4jMVlSC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -65,7 +77,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Cliente">
+    <configuration name="Cliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Cliente.Cliente" />
+      <module name="bancodistribuido" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Cliente.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ClienteImplementacao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Cliente.ClienteImplementacao" />
       <module name="bancodistribuido" />
@@ -73,8 +98,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Servidor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Servidor.Servidor" />
+      <module name="bancodistribuido" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Servidor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Cliente" />
+        <item itemvalue="Application.Servidor" />
         <item itemvalue="Application.ClienteImplementacao" />
       </list>
     </recent_temporary>
@@ -112,11 +152,27 @@
       <workItem from="1574179746555" duration="6815000" />
       <workItem from="1574247482323" duration="7706000" />
       <workItem from="1574375312945" duration="3039000" />
-      <workItem from="1574638569942" duration="739000" />
+      <workItem from="1574638569942" duration="1041000" />
+      <workItem from="1574640494045" duration="4575000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Servidor e cliente funcionando com o RMI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Servidor e cliente funcionando com o RMI" />
   </component>
 </project>

@@ -1,7 +1,6 @@
 package Servidor;
 
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
+import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.Connection;
 
@@ -15,7 +14,7 @@ public class BancoImplementacao extends UnicastRemoteObject implements BancoInte
     private Connection conn;
 
 
-    protected BancoImplementacao() throws Exception{
+    protected BancoImplementacao() throws RemoteException{
         super();
         try{
             this.conn = db.getConnection();
@@ -26,7 +25,7 @@ public class BancoImplementacao extends UnicastRemoteObject implements BancoInte
     }
 
     @Override
-    public void criarConta(String nomeCliente, String senhaCliente) {
-
+    public Conta login(Conta loginConta) throws RemoteException {
+        return null;
     }
 }
