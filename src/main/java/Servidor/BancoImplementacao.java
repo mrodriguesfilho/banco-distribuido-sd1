@@ -73,4 +73,55 @@ public class BancoImplementacao extends UnicastRemoteObject implements BancoInte
         }
         return null;
     }
+
+    @Override
+    public boolean deposito(int numeroagencia, int numeroconta, double valor) throws RemoteException {
+        try {
+            if (this.conn.isClosed()) {
+                this.conn = this.db.getConnection();
+            }
+
+            StringBuilder sql = new StringBuilder();
+            sql.append("UPDATE contas SET saldo=saldo+? WHERE numeroagencia=? AND numeroconta=?");
+
+            PreparedStatement ps = this.conn.prepareStatement(sql.toString());
+            ps.setDouble(1, valor);
+            ps.setInt(2, numeroagencia);
+            ps.setInt(3, numeroconta);
+            ps.executeUpdate();
+            return true;
+
+        }catch(Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+
+    }
+
+    @Override
+    public double saldo(int agencia, int numeroConta) throws RemoteException {
+        try {
+            if (this.conn.isClosed()) {
+                this.conn = this.db.getConnection();
+            }
+
+            StringBuilder sql = new StringBuilder();
+            sql.append("SELECT saldo FROM contas WHERE numeroagencia=? AND numeroconta=?");
+            PreparedStatement ps = this.conn.prepareStatement(sql.toString());
+            ps.setInt(1, agencia);
+            ps.setInt(2, numeroConta);
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                return rs.getDouble("saldo");
+            }else{
+                return 0;
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+    }
 }

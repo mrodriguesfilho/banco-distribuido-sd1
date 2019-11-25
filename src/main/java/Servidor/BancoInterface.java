@@ -15,4 +15,6 @@ public interface BancoInterface extends Remote {
 */
 
     Conta login(Conta dadosLogin) throws RemoteException;
+    boolean deposito(int Agencia, int numeroConta, double valor) throws RemoteException;
+    double saldo(int agencia, int numeroConta) throws RemoteException;
 }

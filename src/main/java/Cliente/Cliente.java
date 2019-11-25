@@ -87,7 +87,7 @@ public class Cliente {
         }
     }
 
-    private static void menu(Cliente clente) throws RemoteException{
+    private static void menu(Cliente cliente) throws RemoteException{
 
         int flagFim = 1;
         int operador;
@@ -95,6 +95,7 @@ public class Cliente {
 
         while(flagFim != 0 ) {
             System.out.println("======= SISTEMA BANCARIO =======");
+            System.out.println("======= "+cliente.conta.getNomeCliente()+" =======\n");
             System.out.println("1 - Consultar saldo");
             System.out.println("2 - Consultar histórico de movimentações");
             System.out.println("3 - Realizar transferencia");
@@ -115,7 +116,11 @@ public class Cliente {
                 case 2:
 
                     System.out.println("\nQual numero da conta?\n");
-
+                case 5:
+                    System.out.println("\nQual o valor do deposito?");
+                    double valor = sc.nextDouble();
+                    cliente.deposito(cliente.conta.getAgencia(), cliente.conta.getNumeroConta(), valor);
+                    System.out.println("O novo saldo é de: "+cliente.saldo(cliente.conta.getAgencia(), cliente.conta.getNumeroConta())+"\n");
                 default:
 
             }
@@ -123,6 +128,16 @@ public class Cliente {
         }
     }
 
+    private void deposito(int Agencia, int numeroConta, double valorDeposito) throws RemoteException {
+
+        if(banco.deposito(Agencia, numeroConta, valorDeposito)){
+            System.out.println("\nO valor de "+valorDeposito+" foi adicionado à conta!");
+        }
+    }
+
+    private double  saldo(int Agencia, int numeroConta) throws RemoteException{
+        return banco.saldo(Agencia, numeroConta);
+    }
 
     public BancoInterface getBanco() {
         return banco;
