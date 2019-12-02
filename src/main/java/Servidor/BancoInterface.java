@@ -3,7 +3,7 @@ package Servidor;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 public interface BancoInterface extends Remote {
 /*
@@ -20,6 +20,6 @@ public interface BancoInterface extends Remote {
     boolean saque(int Agencia, int numeroConta, double valor) throws RemoteException;
     double saldo(int agencia, int numeroConta) throws RemoteException;
     double transferir(int agenciaOrigem, int numeroContaOrigem, double valor, int agenciaDestino, int numeroContaDestino) throws  RemoteException;
-    List<String> extrato(int Agencia, int numeroConta) throws RemoteException;
+    ArrayList<String> extrato(int Agencia, int numeroConta) throws RemoteException;
 
 }

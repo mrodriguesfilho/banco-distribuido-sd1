@@ -4,6 +4,7 @@ import javax.xml.transform.Result;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -253,8 +254,33 @@ public class BancoImplementacao extends UnicastRemoteObject implements BancoInte
     }
 
     @Override
-    public List<String> extrato(int Agencia, int numeroConta) throws RemoteException {
+    public ArrayList<String> extrato(int Agencia, int numeroConta) throws RemoteException {
+        try {
 
-        return null;
+            if (this.conn.isClosed()) {
+                this.conn = this.db.getConnection();
+            }
+
+            ArrayList<String> extrato = new ArrayList<String>();
+
+            StringBuilder sql = new StringBuilder();
+            sql.append("SELECT data, operacao, valor FROM historico WHERE numeroagencia=? AND numeroconta=? ORDER BY data DESC");
+            PreparedStatement ps = this.conn.prepareStatement(sql.toString());
+            ps.setInt(1, Agencia);
+            ps.setInt(2, numeroConta);
+
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+                extrato.add("Data: "+rs.getTimestamp("data")+" / OPERAÇÃO: "+rs.getString("operacao")+" / Valor: "+rs.getDouble("valor"));
+            }
+
+            return extrato;
+
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+
     }
 }

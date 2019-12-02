@@ -115,7 +115,11 @@ public class Cliente {
                     System.out.println("\nSeu saldo atual é de: "+cliente.banco.saldo(cliente.conta.getAgencia(), cliente.conta.getNumeroConta()));
                     break;
                 case 2:
-                    System.out.println("\nQual numero da conta?\n");
+                    System.out.println("\n");
+                    for(String elemento : cliente.banco.extrato(cliente.conta.getAgencia(), cliente.conta.getNumeroConta())){
+                        System.out.println(elemento);
+                    }
+                    System.out.println("\n");
                     break;
                 case 3:
                     System.out.println("\nQual numero da agencia de destino?");
