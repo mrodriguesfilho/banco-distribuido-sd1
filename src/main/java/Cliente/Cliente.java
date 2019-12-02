@@ -112,15 +112,44 @@ public class Cliente {
                     System.out.println("======= OPERAÇÃO FINALIZADA =======");
                     break;
                 case 1:
-
+                    System.out.println("\nSeu saldo atual é de: "+cliente.banco.saldo(cliente.conta.getAgencia(), cliente.conta.getNumeroConta()));
+                    break;
                 case 2:
-
                     System.out.println("\nQual numero da conta?\n");
+                    break;
+                case 3:
+                    System.out.println("\nQual numero da agencia de destino?");
+                    int agencia = sc.nextInt();
+                    System.out.println("\nQual numero da conta de destino?");
+                    int numeroConta = sc.nextInt();
+                    System.out.println("\nQual valor da transferência?");
+                    double valorTransferencia = sc.nextDouble();
+                    double resultado = cliente.banco.transferir(cliente.conta.getAgencia(), cliente.conta.getNumeroConta(), valorTransferencia, agencia, numeroConta);
+
+                    if( resultado == 1 ){
+                        System.out.println("Transferência realizada com sucesso!");
+                    }else if( resultado == 0 ){
+                        System.out.println("Saldo insuficiente!");
+                    }else{
+                        System.out.println("Os dados da conta destino não conferem com uma conta ativa!");
+                    }
+
+                    break;
+                 case 4:
+                     System.out.println("\nQual valor você deseja sacar?");
+                     double valorSaque = sc.nextDouble();
+                     if(cliente.banco.saque(cliente.conta.getAgencia(), cliente.conta.getNumeroConta(), valorSaque)){
+                         System.out.println("Seu saque foi realizado com sucesso!");
+                     }else{
+                         System.out.println("Saldo insuficiente para esse valor!");
+                     }
+                    break;
                 case 5:
                     System.out.println("\nQual o valor do deposito?");
                     double valor = sc.nextDouble();
                     cliente.deposito(cliente.conta.getAgencia(), cliente.conta.getNumeroConta(), valor);
                     System.out.println("O novo saldo é de: "+cliente.saldo(cliente.conta.getAgencia(), cliente.conta.getNumeroConta())+"\n");
+                    break;
                 default:
 
             }
@@ -135,7 +164,7 @@ public class Cliente {
         }
     }
 
-    private double  saldo(int Agencia, int numeroConta) throws RemoteException{
+    private double saldo(int Agencia, int numeroConta) throws RemoteException{
         return banco.saldo(Agencia, numeroConta);
     }
 

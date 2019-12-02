@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0b42742-e178-451d-9ac9-402786c83205" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/27444001-8a5f-4092-8a1f-b8a5bf591825.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/27444001-8a5f-4092-8a1f-b8a5bf591825.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente/ClienteInterface.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servidor/BancoImplementacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor/BancoImplementacao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Servidor/BancoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor/BancoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servidor/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servidor/Conta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/bancodistribuido.kotlin_module" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +51,11 @@
   </component>
   <component name="ProjectId" id="1TqFVi1awqu37vgnX9Pm4jMVlSC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -62,19 +71,7 @@
       <command value="mvn compile" />
     </option>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Cliente">
+  <component name="RunManager" selected="Application.Servidor">
     <configuration name="Cliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Cliente.Cliente" />
       <module name="bancodistribuido" />
@@ -117,23 +114,15 @@
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bdc91ac6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@bdc91ac6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6ccfc9dd" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
-          <select />
-        </treeState>
-      </serviceView>
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -153,7 +142,9 @@
       <workItem from="1574640494045" duration="5296000" />
       <workItem from="1574678952854" duration="3267000" />
       <workItem from="1574687721602" duration="3202000" />
-      <workItem from="1574702527622" duration="13903000" />
+      <workItem from="1574702527622" duration="13996000" />
+      <workItem from="1575227384278" duration="104000" />
+      <workItem from="1575227940224" duration="15347000" />
     </task>
     <task id="LOCAL-00001" summary="Servidor e cliente funcionando com o RMI">
       <created>1574645104140</created>
@@ -169,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574710607143</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Metodos Deposito e Saldo implementados">
+      <created>1574716750947</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574716750947</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +189,33 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Servidor e cliente funcionando com o RMI" />
     <MESSAGE value="Login implementado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login implementado" />
+    <MESSAGE value="Metodos Deposito e Saldo implementados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Metodos Deposito e Saldo implementados" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1245" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1575261400944">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1245" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1575261400944" />
+    <state width="1877" height="241" key="GridCell.Tab.0.bottom" timestamp="1575260292106">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1323" height="241" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1575246591207" />
+    <state width="1877" height="241" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1575260292106" />
+    <state width="1877" height="241" key="GridCell.Tab.0.center" timestamp="1575260292106">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1323" height="241" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1575246591207" />
+    <state width="1877" height="241" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1575260292106" />
+    <state width="1877" height="241" key="GridCell.Tab.0.left" timestamp="1575260292106">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1323" height="241" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1575246591206" />
+    <state width="1877" height="241" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1575260292106" />
+    <state width="1877" height="241" key="GridCell.Tab.0.right" timestamp="1575260292106">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1323" height="241" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1575246591207" />
+    <state width="1877" height="241" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1575260292106" />
   </component>
 </project>
